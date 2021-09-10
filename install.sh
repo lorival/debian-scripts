@@ -1,18 +1,5 @@
 #!/bin/bash
 
-echo "--------------------"
-echo "Removing packages..."
-echo "--------------------"
-echo
-
-for entry in package-lists/to-remove/* 
-do
-    echo "--> $entry" 
-    echo 
-    cat $entry | xargs sudo apt-get -y remove
-    echo
-done
-
 echo "-----------------------------------"
 echo "Installing requirements packages..."
 echo "-----------------------------------"
@@ -45,7 +32,7 @@ echo "----------------------"
 echo "Installing packages..."
 echo "----------------------"
 echo 
-
+./install-docker.sh
 for entry in package-lists/to-install/* 
 do
     echo "--> $entry" 
@@ -60,14 +47,6 @@ echo "---------------------------"
 echo 
 sudo apt-get autoremove
 sudo apt-get clean
-echo
-
-echo "-----------------------"
-echo "Configuring keyboard..."
-echo "-----------------------"
-echo 
-export PATH=$PATH:/usr/sbin
-sudo dpkg-reconfigure keyboard-configuration
 echo
 
 echo "----------------------"

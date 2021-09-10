@@ -2,12 +2,14 @@
 
 This repository install packages and customize Debian to suit me.
 
-Just run ```install.sh```
+## Install
+> $ ./install.sh
 
-## Packages
-- Docker Engine
+- Docker Engine, Machine, Compose
 - Visual Studio Code
 - Git with Git-GUI
 
-## Configurations
+## Configure
+> $ .configure.sh
+
 - Keyboard
